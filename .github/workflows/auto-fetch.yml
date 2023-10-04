@@ -26,11 +26,13 @@ jobs:
           git checkout --track origin/master
           git merge upstream/master
 
-      - name: Release and upload assets
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}   
-          
+      # - name: Release and upload assets
+      #   uses: svenstaro/upload-release-action@v2
+      #   with:
+      #     repo_token: ${{ secrets.GITHUB_TOKEN }}   
+
       - name: GitHub Push        
         uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
     
