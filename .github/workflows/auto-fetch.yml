@@ -25,5 +25,7 @@ jobs:
           git fetch upstream
           git checkout --track origin/master
           git merge upstream/master
-          git push origin master
+                    
+      - name: GitHub Push        
+        uses: ad-m/github-push-action@v0.6.0
     
