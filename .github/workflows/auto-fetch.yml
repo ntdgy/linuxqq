@@ -1,14 +1,13 @@
 name: auto-fetch
 
 on:
-  # schedule:
-  #   - cron: "0 2 * * *"
+  schedule:
+    - cron: "0 2 * * *"
   workflow_dispatch:
     inputs:
-      branchname:
-        description: '请输入要部署的分支名称:'
+      test:
         required: false
-        default: 'release'
+        default: '1'
 
 jobs:
   check-update:
