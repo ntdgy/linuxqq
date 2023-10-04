@@ -1,0 +1,35 @@
+name: auto-fetch
+
+on:
+  # schedule:
+  #   - cron: "0 2 * * *"
+  workflow_dispatch:
+    inputs:
+      branchname:
+        description: '请输入要部署的分支名称:'
+        required: false
+        default: 'release'
+
+jobs:
+  check-update:
+    runs-on: ubuntu-latest # 运行环境为最新版的Ubuntu
+    steps:
+      - name: 'Checkout codes' # 步骤一，获取仓库代码
+        uses: actions/checkout@v1
+      - name: 'check update'
+        run: |
+          git pull
+          git status
+          git log -1
+      - name: 'auto fetch'
+        run: |
+          git fetch --all
+          git reset --hard origin/${{ github.event.inputs.branchname }}
+          git pull
+          git status
+          git log -1
+      - name: 'push to github'
+        run: |
+          git add .
+          git commit -m "auto fetch"
+          git push
