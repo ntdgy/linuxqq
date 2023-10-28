@@ -19,6 +19,9 @@ jobs:
         with:
           repo-name: linuxqq
 
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Extract Version
         id: version_step
         run: |
