@@ -29,6 +29,6 @@ jobs:
         with:
           allowUpdates: false
           artifacts: "./*/*.zst"
-          tag: '*'
+          tag: packages
           token: ${{ secrets.GITHUB_TOKEN }}
     
