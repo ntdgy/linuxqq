@@ -13,12 +13,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-
-      - name: 'build package' 
-        uses: DuckSoft/build-aur-action@master
-        with:
-          repo-name: linuxqq
-
       - name: Checkout
         uses: actions/checkout@v2
 
@@ -27,6 +21,13 @@ jobs:
         run: |
           # get commit hash
           echo "COMMIT_HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - name: 'build package' 
+        uses: DuckSoft/build-aur-action@master
+        with:
+          repo-name: linuxqq
+
+
 
       # - name: Release and upload assets
       #   uses: svenstaro/upload-release-action@v2
