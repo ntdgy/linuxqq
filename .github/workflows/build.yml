@@ -27,8 +27,7 @@ jobs:
       - name: GitHub Push        
         uses: ncipollo/release-action@v1.13.0
         with:
-          allowUpdates: true
-          tag: "packages"
+          allowUpdates: false
           artifacts: "./*/*.zst"
           token: ${{ secrets.GITHUB_TOKEN }}
     
