@@ -18,6 +18,8 @@ jobs:
         uses: actions/checkout@v1
       - name: 'check updates' 
         run: |
+          git config --global user.email "super-moe@github.com"
+          git config --global user.name "super-moe"
           git remote add upstream https://aur.archlinux.org/linuxqq.git
           git fetch upstream
           git checkout --track origin/master
