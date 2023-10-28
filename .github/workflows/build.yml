@@ -19,6 +19,12 @@ jobs:
         with:
           repo-name: linuxqq
 
+      - name: Extract Version
+        id: version_step
+        run: |
+          # get commit hash
+          echo "COMMIT_HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
       # - name: Release and upload assets
       #   uses: svenstaro/upload-release-action@v2
       #   with:
@@ -29,7 +35,7 @@ jobs:
         with:
           allowUpdates: false
           artifacts: "./*/*.zst"
-          commit: master
-          tag: packages
+          tag: ${{ env.COMMIT_HASH }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          replacesArtifacts: true
     
