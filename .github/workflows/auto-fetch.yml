@@ -23,7 +23,7 @@ jobs:
           git remote add upstream https://aur.archlinux.org/linuxqq.git
           git fetch upstream
           git checkout --track origin/master
-          git merge upstream/master
+          git merge upstream/master -allow-unrelated-histories
 
       # - name: Release and upload assets
       #   uses: svenstaro/upload-release-action@v2
