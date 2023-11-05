@@ -15,7 +15,7 @@ jobs:
     # check if there is updates from https://aur.archlinux.org/linuxqq.git and fetch to repo
     steps:
       - name: 'Checkout codes' 
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
       - name: 'check updates' 
         run: |
           git config --global user.email "ntdgy@github.com"
@@ -31,7 +31,7 @@ jobs:
       #     repo_token: ${{ secrets.GITHUB_TOKEN }}   
 
       - name: GitHub Push        
-        uses: ad-m/github-push-action@v0.6.0
+        uses: ad-m/github-push-action@v0.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
     
