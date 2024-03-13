@@ -27,7 +27,7 @@ jobs:
       - name: 'build package' 
         uses: DuckSoft/build-aur-action@master
         with:
-          repo-name: linuxqq
+          repo-name: wechat-beta-bwrap
 
       # - name: Release and upload assets
       #   uses: svenstaro/upload-release-action@v2
