@@ -37,9 +37,9 @@ jobs:
       - name: GitHub Push        
         uses: ncipollo/release-action@v1.13.0
         with:
-          allowUpdates: false
           artifacts: "./*/*.zst"
           tag: ${{ env.tag }}
           token: ${{ secrets.GITHUB_TOKEN }}
           skipIfReleaseExists: false
           replacesArtifacts: true
+          allowUpdates: true

@@ -29,8 +29,6 @@ jobs:
         with:
           repo-name: linuxqq
 
-
-
       # - name: Release and upload assets
       #   uses: svenstaro/upload-release-action@v2
       #   with:
@@ -39,10 +37,10 @@ jobs:
       - name: GitHub Push        
         uses: ncipollo/release-action@v1.13.0
         with:
-          allowUpdates: false
           artifacts: "./*/*.zst"
           tag: ${{ env.tag }}
           token: ${{ secrets.GITHUB_TOKEN }}
           skipIfReleaseExists: true
           replacesArtifacts: true
+          allowUpdates: true
     
