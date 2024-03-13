@@ -1,4 +1,4 @@
-name: auto-fetch
+name: auto-fetch-wechat
 
 on:
   schedule:
