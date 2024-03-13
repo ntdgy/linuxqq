@@ -16,13 +16,15 @@ jobs:
     steps:
       - name: 'Checkout codes' 
         uses: actions/checkout@v4
+        with:
+          ref: linuxqq
       - name: 'check updates' 
         run: |
           git config --global user.email "ntdgy@github.com"
           git config --global user.name "ntdgy"
           git remote add upstream https://aur.archlinux.org/linuxqq.git
           git fetch upstream
-          git checkout master
+          git checkout linuxqq
           git merge upstream/master --allow-unrelated-histories
 
       # - name: Release and upload assets
@@ -34,4 +36,5 @@ jobs:
         uses: ad-m/github-push-action@v0.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: linuxqq
     

@@ -22,7 +22,7 @@ jobs:
         id: version_step
         run: |
           # get commit hash
-          echo "COMMIT_HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+          echo "tag=$(date +%Y%m%d)" >> $GITHUB_ENV
 
       - name: 'build package' 
         uses: DuckSoft/build-aur-action@master
@@ -39,7 +39,7 @@ jobs:
         with:
           allowUpdates: false
           artifacts: "./*/*.zst"
-          tag: ${{ env.COMMIT_HASH }}
+          tag: ${{ env.tag }}
           token: ${{ secrets.GITHUB_TOKEN }}
           skipIfReleaseExists: false
           replacesArtifacts: true
