@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: 'Checkout codes' 
         uses: actions/checkout@v4
+        with:
+          ref: wechat
       - name: 'check updates' 
         run: |
           git config --global user.email "ntdgy@github.com"
