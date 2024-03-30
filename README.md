@@ -1,6 +1,6 @@
 # linuxqq
 
-linux wechat 的打包位于 wechat 分支， https://github.com/ntdgy/linuxqq/tree/wechat。
+linux wechat 的打包位于 wechat 分支， https://github.com/ntdgy/linuxqq/tree/wechat
 
 上级仓库： https://aur.archlinux.org/linuxqq.git 
 
